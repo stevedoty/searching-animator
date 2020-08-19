@@ -19,12 +19,12 @@
 //    return unsuccessful
 //
 
-
+/*-----Used for ordered lists to find index of target value------*/
 export function binarySearch(A, n, T) {
-  L = 0;
-  R = n-1;
+  let L = 0;
+  let R = n-1;
   while(L <= R){
-    m = Math.floor((L + R) /2);
+    let m = Math.floor((L + R) /2);
     if(A[m] < T){
       L = m + 1;
     }else if(A[m] > T){

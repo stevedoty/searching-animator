@@ -1,3 +1,20 @@
+
+.user-form{
+  display: inline-block;
+}
+
+.input-field{
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+}
+.output-field{
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+}
+
+
 .grid-row{
 }
 .grid-node{
