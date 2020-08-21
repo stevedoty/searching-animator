@@ -11,25 +11,20 @@ export default class SearchingAnimator extends React.Component {
       inputValue: undefined,
       outputIndex: undefined,
     }
-
-    this.handleInputValue = this.handleInputValue.bind(this);
+    this.handleOutputIndex = this.handleOutputIndex.bind(this);
   }
 
-  //update state of inputValue
-  handleInputValue = (e) => {
-    let inputValue = e.target.value;
-    console.log(inputValue);
-  }
+
 
   //run inputValue through searchingAlgorithms, return outputIndex
-  handleOutputIndex = () => {
-
-    // let array = this.state.array;
-    // let target = this.state.inputValue;
-    // let n = array.length;
-    // let outputIndex = binarySearch(array, n, target);
-    // this.setState({this.state.outputIndex:outputIndex});
-    console.log('yo');
+  handleOutputIndex = (e) => {
+    e.preventDefault();
+    let array = this.state.array;
+    let n = this.state.array.length;
+    let target = parseInt(document.getElementById("input-value").value)
+    // let output = binarySearch(array, n, target);
+    console.log('target');
+    // this.setState({outputIndex:output})
   }
 
 
@@ -37,15 +32,23 @@ export default class SearchingAnimator extends React.Component {
 
 
   render(){
-    const {array} = this.state;
+    const {array, inputValue, outputIndex} = this.state;
     return (
       <div className="SearchingAnimator-container">
-        <form className="user-form">
+
+
+
+        <form className="user-form" onSubmit={this.handleOutputIndex}>
           <label>
-            <input type="text" value={this.state.inputValue} onChange={this.handleInputValue} />
+            <input id="input-value" value={inputValue}/>
+            <input id="output-index" value={outputIndex}/>
           </label>
-          <input type="submit" value="Submit" onSubmit={this.handleOutputIndex}/>
+          <button>button</button>
         </form>
+
+
+
+
         <div className="grid-row">
           {this.state.array.map((num, i) => (
               <div key={i} className="grid-node">{num}</div>

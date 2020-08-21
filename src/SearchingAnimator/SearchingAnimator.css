@@ -1,14 +1,15 @@
 
 .user-form{
   display: inline-block;
+  margin-bottom: 1px;
 }
 
-.input-field{
+.input-value{
   border: 1px solid black;
   width: 100px;
   height: 20px;
 }
-.output-field{
+.output-index{
   border: 1px solid black;
   width: 100px;
   height: 20px;
